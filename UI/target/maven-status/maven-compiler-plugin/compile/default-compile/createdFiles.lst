@@ -1,0 +1,3 @@
+com\shah\interceptor\LoggedInterceptor.class
+com\shah\interceptor\Logged.class
+com\shah\StoreBean.class

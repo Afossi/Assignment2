@@ -1,0 +1,8 @@
+com\shah\entity\Store$StoreBuilder.class
+com\shah\inventory\InventoryServiceImpl.class
+com\shah\entity\Inventory$InventoryBuilder.class
+com\shah\entity\Store.class
+com\shah\inventory\InventoryService.class
+com\shah\store\StoreService.class
+com\shah\store\StoreServiceImpl.class
+com\shah\entity\Inventory.class

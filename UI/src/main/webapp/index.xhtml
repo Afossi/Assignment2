@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+</h:head>
+<h:body>
+  <div class="p-d-flex">
+    <div class="p-mr-2" style="margin-top: 2em">
+      <div class="p-mr-2">
+        <h:form>
+          <p:dataTable id="table" var="game" value="#{storeBean.inventoryList}"
+                       allowUnsorting="true" sortMode="single">
+            <p:column headerText="Inventory Name" field="name" filterable="false"
+                      sortOrder="asc">
+              <h:outputText value="#{inventory.name}"/>
+            </p:column>
+
+            <p:column headerText="Sport" field="price" filterable="false">
+              <h:outputText value="#{inventory.sport}"/>
+            </p:column>
+
+            <p:column headerText="Price" field="price" filterable="false">
+              <h:outputText value="#{inventory.price}"/>
+            </p:column>
+
+            <p:column headerText="Quantity" field="quantity" filterable="false">
+              <h:outputText value="#{inventory.quantity}"/>
+            </p:column>
+
+            <p:column headerText="SignUpDate" field="developer" filterable="false">
+              <h:outputText value="#{inventory.signupDate}"/>
+            </p:column>
+
+            <p:column headerText="Remove Game">
+              <p:commandButton type="submit" value="Remove Game" icon="pi pi-refresh"
+                               actionListener="#{storeBean.addInventory(inventory)}"
+                               style="margin-right: 2em" iconPos="right"/>
+            </p:column>
+          </p:dataTable>
+        </h:form>
+      </div>
+    </div>
+
+    <h:form>
+      <div class="p-field" style="margin: 2em">
+        <p:outputLabel for="name" style="margin-right: .95em">Inventory Name: </p:outputLabel>
+        <p:inputText id="name" type="text" value="#{storeBean.name}">
+        </p:inputText>
+      </div>
+
+      <div class="p-field" style="margin: 2em">
+        <p:outputLabel for="price" style="margin-right: 3.50em">Sport: </p:outputLabel>
+        <p:inputText id="price" type="text" value="#{storeBean.sport}"/>
+      </div>
+
+      <div class="p-field" style="margin: 2em">
+        <p:outputLabel for="price" style="margin-right: 3.50em">Price: </p:outputLabel>
+        <p:inputText id="price" type="text" value="#{storeBean.price}"/>
+      </div>
+
+      <div class="p-field" style="margin: 2em">
+        <p:outputLabel for="developer" style="margin-right: 1.20em">Quantity: </p:outputLabel>
+        <p:inputText id="developer" type="text" value="#{storeBean.quantity}"/>
+      </div>
+
+      <p:commandButton style="margin: 2em" type="submit" actionListener="#{storeBean.addInventory}"
+                       validateClient="true"
+                       value="Add Game" icon="pi pi-check" iconPos="right"/>
+    </h:form>
+  </div>
+</h:body>
+</html>
